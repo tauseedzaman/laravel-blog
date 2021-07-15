@@ -1,0 +1,186 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Oswald&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.left_sidebar {
+    height: 100vh;
+    width: 25%;
+    border-right: 2px solid black;
+    text-align: center;
+
+
+}
+
+.web_name h2 {
+    font-size: 1.7rem;
+}
+
+.left_sidebar ul li {
+    list-style: none;
+}
+
+.left_sidebar ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.left_sidebar ul li a.active {
+    background-color: blue;
+}
+
+.custom_navbar {
+    display: none;
+}
+
+.close-btn {
+    display: none;
+}
+
+.gray-color {
+    background-color: #fafafa;
+    /* height: 100vh; */
+}
+
+.category ul {
+    margin-top: 30px;
+}
+
+.category ul li {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.category ul li a {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    color: black;
+}
+
+.category ul li a span {
+    color: gray;
+}
+
+.inline-form {
+    width: 100%;
+    padding-top: 30px;
+}
+
+.image img {
+    width: 100%;
+}
+
+.latest-border {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-bottom: 20px;
+}
+
+/* .blog_image {
+    width: 200px;
+    height: 200px;
+} */
+
+.blog_image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+
+
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+.pagination a{
+    margin: 10px 5px;
+    text-decoration: none;
+    font-size: 15px;
+    border: 1px solid blue;
+    padding: 5px 10px;
+    border-radius: 100%;
+}
+
+.pagination a:hover{
+    background-color: rgb(89, 89, 230);
+    color: white;
+    transition: all 0.5s;
+}
+
+.blog_image_single img{
+    width: 100%;
+}
+.about_image img{
+    width: 100%;
+}
+/* responsive code */
+
+@media screen and (max-width:992px) {
+    .left_sidebar {
+        display: none;
+        border-right: none;
+    }
+
+    .show {
+        display: block;
+        width: 35%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 1);
+        transition: all 0.5s;
+    }
+
+    .close-btn {
+        display: block;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .custom_navbar {
+        display: block;
+        background-color: blue;
+    }
+}
+
+@media screen and (max-width:830px) {
+    .web_name h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:730px) {
+    .left_sidebar {
+       width: 50%;
+    }
+}
+@media screen and (max-width:340px) {
+    .left_sidebar {
+       width: 80%;
+    }
+}
+@media screen and (max-width:200px) {
+    .left_sidebar {
+       width: 100%;
+    }
+}
+#nav-item{
+
+}
+#nav-item:hover{
+    background-color:#0000FF;
+}
