@@ -20,10 +20,10 @@ class searchcontroller extends Controller
 //        dd($request->all());
 
         $categories = category::all();
-        $post = posts::WHERE('title','like %'.$request->search.'%')->OrderBy('id','desc')->get();
-//        $post = posts::where('title','like','%'.$request->search.'%')->OrderBy('id','desc')->get();
-dd($post);
-//        return view('searchResult')->with(['categories' => $categories,'post'=>$post]);
+
+//        $post = posts::WHERE('title','like %'.$request->search.'%')->OrderBy('id','desc')->get();
+        $post = posts::where('title','like','%'.$request->search.'%')->OrderBy('id','desc')->paginate(10);
+        return view('searchResult')->with(['categories' => $categories,'posts'=>$post,'searchItem' => $request->search]);
     }
 
     /**
