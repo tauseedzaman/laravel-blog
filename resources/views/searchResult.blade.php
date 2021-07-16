@@ -12,7 +12,8 @@
                                     class="btn btn-primary"><i
                                         class="fas fa-bars"></i></button></a>
                         </div>
-                        <h4 class="border-bottom mt-3 p-3 ">Search Result For : <span class="text-success">{{$searchItem}}</span> ({{ $posts->count() }}) items found</h4>
+                        <h4 class="border-bottom mt-3 p-3 ">Search Result For  <span class="text-success">" {{$searchItem}} "</span>
+                            <br> (<span class="text-success"> {{$posts->count()}} </span>) items found</h4>
                         <div class="row mt-3">
                             @forelse($posts as $post)
                                 <div class="col-xl-3 col-md-12 col-sm-12

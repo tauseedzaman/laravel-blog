@@ -4,7 +4,6 @@
 
     <div class="col-lg-9 col-md-12 col-sm-12">
         <div class="container">
-            <h1 class="text-center text-capitalize p-2 rounded shadow">Category : xxxx</h1>
             <div class="row">
                 <div class="col-xl-9 col-md-12 col-sm-12">
                     <div class="main_content">
@@ -13,8 +12,56 @@
                                     class="btn btn-primary"><i
                                         class="fas fa-bars"></i></button></a>
                         </div>
+                        <h4 class="border-bottom mt-3 p-3 ">Category  <span class="text-success">" {{$searchItem}} "</span>
+                            <br> (<span class="text-success"> {{$posts->count()}} </span>) posts found</h4>
                         <div class="row mt-3">
-                            @livewire('posts')
+                            @forelse($posts as $post)
+                                <div class="col-xl-3 col-md-12 col-sm-12
+                                    d-flex
+                                    justify-content-center
+                                    align-items-center mt-3">
+                                    <div class="blog_image">
+                                        <a href="show-{{$post->id  }}-post">
+                                            <img
+                                                src="{{ config('app.url') }}storage/{{ $post->image  }}"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-9 col-md-12 col-sm-12
+                                    mt-5">
+                                    <a href="show-{{$post->id  }}-post">
+                                        <h3 class="px-4">
+                                            {{ $post->title }}
+                                        </h3>
+                                    </a>
+                                    <div class="mx-4 ">
+                                        <span >{!! substr($post->content, 0, 150) !!} </span>
+                                        <a class="text-capitalize text-info" href="show-{{ $post->id  }}-post">Read More</a>
+
+                                    </div>
+                                    <p class="d-flex
+                                        justify-content-around">
+                                        <span><i class="fas
+                                                fa-calendar-alt mr-2"></i>
+                                            {{ $post->created_at->format('d') }}
+                                            {{ $post->created_at->format('m') }}
+                                            {{ $post->created_at->format('y') }}
+ </span>
+                                        <span> <i class="fa fa-folder mr-2"
+                                                  aria-hidden="true"></i>
+                                            Javascript</span>
+                                        <span> <i class="fa fa-comments
+                                                mr-2"
+                                                  aria-hidden="true"></i>45</span>
+                                    </p>
+                                </div>
+                                {{ $posts->links() }}
+
+                            @empty
+                                <h1 class="text-info text-capitalize">no post found!</h1>
+                            @endforelse
+
                         </div>
                     </div>
                 </div>

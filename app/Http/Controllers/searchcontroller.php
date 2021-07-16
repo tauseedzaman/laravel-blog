@@ -17,13 +17,21 @@ class searchcontroller extends Controller
      */
     public function search(Request $request)
     {
-//        dd($request->all());
-
         $categories = category::all();
+        $post = posts::where('title','like','%'.$request->search.'%')->orWhere('content','like','%'.$request->search.'%')->orWhere('auther','like','%'.$request->search.'%')->orWhere('created_at','like','%'.$request->search.'%')->OrderBy('id','desc')->paginate(10);
 
-//        $post = posts::WHERE('title','like %'.$request->search.'%')->OrderBy('id','desc')->get();
-        $post = posts::where('title','like','%'.$request->search.'%')->OrderBy('id','desc')->paginate(10);
         return view('searchResult')->with(['categories' => $categories,'posts'=>$post,'searchItem' => $request->search]);
+    }
+
+
+
+
+    public function searchByCategory($request)
+    {
+        $categories = category::all();
+        $category_id = category::where('name',$request)->firstOrFail()->id;
+            $posts = posts::where('category_id',$category_id)->OrderBy('id','desc')->paginate(10);
+        return view('categoryResult')->with(['categories' => $categories,'posts'=>$posts,'searchItem' => $request]);
     }
 
     /**

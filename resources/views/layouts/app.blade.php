@@ -167,7 +167,7 @@
                             <ul>
                         @forelse($categories as $category)
                              <li>
-                                    <a href="">{{$category->name}}
+                                    <a href="{{ route('searchByCategory',$category->name) }}">{{$category->name}}
 
                                         <span>({{ $category->posts->count() }})</span>
                                     </a>

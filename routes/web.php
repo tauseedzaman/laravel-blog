@@ -23,6 +23,7 @@ Route::get('/show-{id}-post', function ($id) {
     return view('singlePost')->with(['categories' => $categories,'post'=>$post]);
 });
 Route::post('/search', [\App\Http\Controllers\searchcontroller::class,'search'])->name('search');
+Route::get('/category/{category}', [\App\Http\Controllers\searchcontroller::class,'searchByCategory'])->name('searchByCategory');
 
 
 Route::middleware(['auth','checkadmin'])->group(function () {
