@@ -21,7 +21,7 @@
                             <div class="text-info" wire:loading>Loading..</div>
                             <form accept-charset="utf-8" class=" border-2  rounded p-3" wire:submit.prevent="add_setting()">
                                 <div class="col-md-8 ">
-                                    <p class="text-muted">General settings such as, site title, site about, address and so on.</p>
+                                    <p class="text-muted">General settings such as, site title, site about and so on.</p>
 
                                     <div class="form-group">
                                         <label for="site-title" class="form-control-label">Site Title</label>

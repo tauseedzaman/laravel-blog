@@ -44,7 +44,7 @@ Route::middleware(['auth','checkadmin'])->group(function () {
         Route::get('comments', App\Http\Livewire\Admin\comments::class)->name('admin.comments');
         Route::get('settings', App\Http\Livewire\Admin\Settings::class)->name('admin.settings');
         Route::get('categories', App\Http\Livewire\Admin\category::class)->name('admin.category');
-        // Route::view('categories', 'admin.category')->name('admin.category');
+        Route::get('dashboard', App\Http\Livewire\Admin\Dashboard::class)->name('admin.dashboard');
     });
 });
 

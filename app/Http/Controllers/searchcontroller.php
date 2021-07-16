@@ -23,8 +23,7 @@ class searchcontroller extends Controller
         return view('searchResult')->with(['categories' => $categories,'posts'=>$post,'searchItem' => $request->search]);
     }
 
-
-
+l
 
     public function searchByCategory($request)
     {
