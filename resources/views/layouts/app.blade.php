@@ -7,14 +7,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery.js') }}" defer></script>
     <script src="{{ asset('js/bootstrap.js') }}" defer></script>
     <script src="{{ asset('js/action.js') }}" defer></script>
-
+<!-{{ $setup = App\Models\Setting::latest()->first() }}->
+    <title>{{ $setup->title }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -28,6 +28,8 @@
         href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
         crossorigin="anonymous" />
+    <link rel="icon" href="storage/{{ $setup ? $setup->favicon_path : ''  }}" type="image/x-icon">
+    <link rel="shortcut icon" href="storage/{{ $setup ? $setup->favicon_path : '' }}" type="image/x-icon">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -35,7 +37,7 @@
     @livewireScripts
 </head>
 <body >
- <!-{{ $setup = App\Models\ }}-!>
+ <!-{{ $setup = App\Models\Setting::latest()->first() }}->
     <div class="container-float">
         <div class="row">
             <div class="col-lg-3 col-md-0 col-sm-0">
@@ -44,7 +46,7 @@
                     <a href="" class="close-btn btn btn-primary" id="close"><i
                             class="fas fa-times"></i></a>
                              <div class="web_name">
-                        <h1 class="text-center bg-primary py-2 "  ><img src="storage/{{ $setup->logo_path }}" alt=""> <b>{{  config('app.name') }} </b></h1>
+                        <h1 class=" bg-primary py-2 "  ><img class="img-circle rounded-circle " width="50px" height="50px" src="storage/{{ $setup ? $setup->logo_path : "logo" }}" alt=""> <b class="float-right pr-5 ">{{  $setup ? $setup->title : "Zaman Blog" }} </b></h1>
                     </div> <br>
                     <ul class="">
                         <li><a href="{{ url('/') }}" class="nav-link rounded border " id="nav-item">Posts</a></li>
@@ -131,73 +133,7 @@
                         </div>
                         <div class="latest_post mt-5">
                             <h3 class="mb-2">Latest Post</h3>
-                            <div class="row">
-                                <div class="col-5 image">
-                                    <a href="single-post.html">
-                                        <img
-                                            src="images/h1-single-img-1.png"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="col-7">
-                                    <a href="single-post.html">
-                                        <h6>Even the all-powerful
-                                            Pointing has no
-                                            control</h6>
-                                    </a>
-                                    <h6>
-                                        <span><i class="fas
-                                                fa-calendar-alt
-                                                mr-2"></i>
-                                            20
-                                            June
-                                            2021 </span>
-                                        <span> <i class="fa fa-user
-                                                mr-2 ml-2"
-                                                aria-hidden="true"></i>
-                                            Hilal </span>
-                                        <span> <i class="fa
-                                                fa-comments
-                                                mr-2 ml-2"
-                                                aria-hidden="true"></i>
-                                            27</span>
-                                    </h6>
-                                </div>
-                                <div class="latest-border"></div>
-                                <div class="col-5 image">
-                                    <a href="single-post.html">
-                                        <img
-                                            src="images/h1-single-img-1.png"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="col-7">
-                                    <a href="single-post.html">
-                                        <h6>Even the all-powerful
-                                            Pointing has no
-                                            control</h6>
-                                    </a>
-                                    <h6>
-                                        <span><i class="fas
-                                                fa-calendar-alt
-                                                mr-2"></i>
-                                            20
-                                            June
-                                            2021 </span>
-                                        <span> <i class="fa fa-user
-                                                mr-2 ml-2"
-                                                aria-hidden="true"></i>
-                                            Hilal </span>
-                                        <span> <i class="fa
-                                                fa-comments
-                                                mr-2 ml-2"
-                                                aria-hidden="true"></i>
-                                            27</span>
-                                    </h6>
-                                </div>
-                                <div class="latest-border"></div>
-                            </div>
-                        </div>
+                            @livewire('latest-posts')
                         <div class="most_viewed_post mt-5">
                             <h3 class="mb-2">Most Viewed Post</h3>
                             <div class="row">

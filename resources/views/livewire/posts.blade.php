@@ -27,16 +27,16 @@
                                         justify-content-around">
                                         <span><i class="fas
                                                 fa-calendar-alt mr-2"></i>
-                                            {{ $post->created_at->format('d') }}
-                                            {{ $post->created_at->format('m') }}
+                                            {{ $post->created_at->format('d') }} /
+                                            {{ $post->created_at->format('m') }} /
                                             {{ $post->created_at->format('y') }}
  </span>
                                         <span> <i class="fa fa-folder mr-2"
                                                 aria-hidden="true"></i>
-                                            Javascript</span>
+                                            {{ $post->category->name  }}</span>
                                         <span> <i class="fa fa-comments
                                                 mr-2"
-                                                aria-hidden="true"></i>45</span>
+                                                aria-hidden="true"></i>{{ $post->comments->count() }}</span>
                                     </p>
                                 </div>
     {{ $posts->links() }}
