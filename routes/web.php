@@ -9,7 +9,8 @@ Route::get('/', function () {
 });
 Route::get('/about', function () {
     $categories = App\Models\category::all();
-    return view('about')->with(['categories' => $categories]);
+    $about = App\Models\setting::latest()->first();
+    return view('about')->with(['categories' => $categories,'data' => $about]);
 });
 
 Route::get('/contact', function () {

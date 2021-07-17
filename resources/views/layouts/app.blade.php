@@ -135,72 +135,7 @@
                             <h3 class="mb-2">Latest Post</h3>
                             @livewire('latest-posts')
                         <div class="most_viewed_post mt-5">
-                            <h3 class="mb-2">Most Viewed Post</h3>
-                            <div class="row">
-                                <div class="col-5 image">
-                                    <a href="single-post.html">
-                                        <img
-                                            src="images/h1-single-img-1.png"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="col-7">
-                                    <a href="single-post.html">
-                                        <h6>Even the all-powerful
-                                            Pointing has no
-                                            control</h6>
-                                    </a>
-                                    <h6>
-                                        <span><i class="fas
-                                                fa-calendar-alt
-                                                mr-2"></i>
-                                            20
-                                            June
-                                            2021 </span>
-                                        <span> <i class="fa fa-user
-                                                mr-2 ml-2"
-                                                aria-hidden="true"></i>
-                                            Hilal </span>
-                                        <span> <i class="fa
-                                                fa-comments
-                                                mr-2 ml-2"
-                                                aria-hidden="true"></i>
-                                            27</span>
-                                    </h6>
-                                </div>
-                                <div class="latest-border"></div>
-                                <div class="col-5 image">
-                                    <a href="single-post.html">
-                                        <img
-                                            src="images/h1-single-img-1.png"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="col-7">
-                                    <a href="single-post.html">
-                                        <h6>Even the all-powerful
-                                            Pointing has no
-                                            control</h6>
-                                    </a>
-                                    <h6>
-                                        <span><i class="fas
-                                                fa-calendar-alt
-                                                mr-2"></i>
-                                            20
-                                            June
-                                            2021 </span>
-                                        <span> <i class="fa fa-user
-                                                mr-2 ml-2"
-                                                aria-hidden="true"></i>
-                                            Hilal </span>
-                                        <span> <i class="fa
-                                                fa-comments
-                                                mr-2 ml-2"
-                                                aria-hidden="true"></i>
-                                            27</span>
-                                    </h6>
-                                </div>
-                                <div class="latest-border"></div>
+                        
                             </div>
                         </div>
                     </div>
