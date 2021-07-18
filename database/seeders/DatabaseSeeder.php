@@ -19,6 +19,11 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('tauseedzaman'),
             'is_admin' => true
         ]);
-        // \App\Models\User::factory(10)->create();
+        $this->call([
+            categorySeeder::class,
+            PostsSeeder::class,
+            CommentsSeeder::class,
+            SubscribersSeeder::class,
+        ]);
     }
 }
