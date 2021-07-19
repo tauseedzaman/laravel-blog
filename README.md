@@ -22,5 +22,5 @@ start the server:<br />
     ``` php artisan serve ```<br />
 view website in browser:<br />
     ``` site link: http://127.0.0.1:8000/ ```<br />
-
+Note: ```admin email tauseedzaman@test.com and password tauseedzaman```<br />
 ```> Leave a start if you like this project```

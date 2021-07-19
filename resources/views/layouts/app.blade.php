@@ -14,7 +14,7 @@
     <script src="{{ asset('js/bootstrap.js') }}" defer></script>
     <script src="{{ asset('js/action.js') }}" defer></script>
 <!-{{ $setup = App\Models\Setting::latest()->first() }}->
-    <title>{{ $setup->title }}</title>
+    <title>{{ $setup ? $setup->title : "zaman blog" }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -135,7 +135,7 @@
                             <h3 class="mb-2">Latest Post</h3>
                             @livewire('latest-posts')
                         <div class="most_viewed_post mt-5">
-                        
+
                             </div>
                         </div>
                     </div>
