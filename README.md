@@ -1,4 +1,4 @@
-##Laravel Blog 
+# Laravel Blog 
 
 ## Quick Start
 
