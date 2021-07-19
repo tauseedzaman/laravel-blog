@@ -3,10 +3,10 @@
 ## Quick Start
 
 clone the repo :<br />
-    ``` git clone https://github.com/tauseedzaman/bloging ``` <br />
+    ``` git clone https://github.com/tauseedzaman/laravel-blog ``` <br />
     
 go to bloging folder:<br />
-    ``` cd bloging ```<br />
+    ``` cd laravel-blog ```<br />
 
 install dependencies:<br />
     ``` composer install ```<br />
