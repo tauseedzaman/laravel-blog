@@ -1,4 +1,4 @@
-#Laravel Blog 
+##Laravel Blog 
 
 ## Quick Start
 
@@ -23,4 +23,4 @@ start the server:<br />
 view website in browser:<br />
     ``` site link: http://127.0.0.1:8000/ ```<br />
 
-** > Leave a start if you like this project **
+```> Leave a start if you like this project```
